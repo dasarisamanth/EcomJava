@@ -33,4 +33,28 @@
   <filter-name>Authentication</filter-name>
   <url-pattern>/success</url-pattern>
   </filter-mapping>
+  <servlet>
+  <servlet-name>reset</servlet-name>
+  <servlet-class>com.ecom.Reset</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>reset</servlet-name>
+  <url-pattern>/reset</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>Pass</servlet-name>
+  <servlet-class>com.ecom.Password</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Pass</servlet-name>
+  <url-pattern>/rsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>resetsuccess</servlet-name>
+  <servlet-class>com.ecom.ResetSuccess</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>resetsuccess</servlet-name>
+  <url-pattern>/password</url-pattern>
+  </servlet-mapping>
 </web-app>

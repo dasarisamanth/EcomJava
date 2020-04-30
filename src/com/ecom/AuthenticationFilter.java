@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class AuthenticationFilter implements Filter {
-
+static int count=3;
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
@@ -38,8 +38,10 @@ public class AuthenticationFilter implements Filter {
 		 int hshpd = req.getParameter("pswd").hashCode();
 		 
 		HttpSession ses = req.getSession();
+			
 		
 		try {
+			
 			Connection con = DB.getDataSource().getConnection();
 			PreparedStatement pst = con.prepareStatement("select password from users_ecom where email=?");
 			pst.setString(1, email);
@@ -56,11 +58,35 @@ public class AuthenticationFilter implements Filter {
 				
 			}
 			else {
+				
+				if(count>=1 && count<=3) {
 				RequestDispatcher rd = req.getRequestDispatcher("./login.jsp");
 				res.setContentType("text/html");
 				PrintWriter out = res.getWriter();
+				count--;
+				
+				if(count>=1) {
 				out.print("<div class='alert alert-danger'>Invalid Email/Password</div>");
+				out.print("<div class='alert alert-danger'>"+"No Of Attempts Left:"+count+"</div>");
+				}
 				rd.include(req, res);
+				}
+				else if(count<=0) {
+					PreparedStatement pst2 = con.prepareStatement("update users_ecom set password=? where email=?");
+					int hshpdb = "random1234".hashCode();
+					pst2.setInt(1, hshpdb);
+					pst2.setString(2, email);
+					pst2.executeUpdate();
+					RequestDispatcher rd = req.getRequestDispatcher("./login.jsp");
+					res.setContentType("text/html");
+					PrintWriter out = res.getWriter();
+					count=3;
+					out.print("<div class='alert alert-danger'>Account Locked Please Reset Password</div>");
+					rd.include(req, res);
+					
+					
+					
+				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
