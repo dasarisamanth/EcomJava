@@ -28,9 +28,9 @@
           </div>
         </div>
         
-        <button type="submit" class="btn btn-primary">Sign in</button>
+      <button style='width:2rem' type="submit" class="btn btn-primary">Sign in</button>
       </form>
-        <a class='btn btn-primary' href='./reset.html'>Reset Password</a>
+        <a style='width:2rem'  class='btn btn-primary mt-2' href='./reset.html'>Reset Password</a>
       </div>
 
 </body>

@@ -64,22 +64,15 @@ static int count=3;
 				res.setContentType("text/html");
 				PrintWriter out = res.getWriter();
 				count--;
-				
-				if(count>=1) {
-				out.print("<div class='alert alert-danger'>Invalid Email/Password</div>");
-				out.print("<div class='alert alert-danger'>"+"No Of Attempts Left:"+count+"</div>");
-				}
-				rd.include(req, res);
-				}
-				else if(count<=0) {
+				if(count<=0) {
 					PreparedStatement pst2 = con.prepareStatement("update users_ecom set password=? where email=?");
 					int hshpdb = "random1234".hashCode();
 					pst2.setInt(1, hshpdb);
 					pst2.setString(2, email);
 					pst2.executeUpdate();
-					RequestDispatcher rd = req.getRequestDispatcher("./login.jsp");
+					
 					res.setContentType("text/html");
-					PrintWriter out = res.getWriter();
+					 out = res.getWriter();
 					count=3;
 					out.print("<div class='alert alert-danger'>Account Locked Please Reset Password</div>");
 					rd.include(req, res);
@@ -87,6 +80,13 @@ static int count=3;
 					
 					
 				}
+				
+				
+				out.print("<div class='alert alert-danger'>Invalid Email/Password</div>");
+				out.print("<div class='alert alert-danger'>"+"No Of Attempts Left:"+count+"</div>");
+			    rd.include(req, res);
+				}
+				 
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

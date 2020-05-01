@@ -57,4 +57,20 @@
   <servlet-name>resetsuccess</servlet-name>
   <url-pattern>/password</url-pattern>
   </servlet-mapping>
+   <servlet>
+  <servlet-name>Add Address</servlet-name>
+  <servlet-class>com.ecom.AddAddress</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Add Address</servlet-name>
+  <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>Delete Address</servlet-name>
+  <servlet-class>com.ecom.DeleteAddress</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Delete Address</servlet-name>
+  <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
 </web-app>

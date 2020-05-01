@@ -5,7 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <%
@@ -34,7 +36,14 @@ for(Cookie cookie : cookies){
                          %>
                         <ul class='nav navbar-nav navbar-right'>
                         <li>
-                            <a style="color:whitesmoke;text-decoration:none" class='mr-2' href="#"><%= userName %></a>
+                        <div class="dropdown text-white mr-2">
+                       <a class=" dropdown-toggle" type="link" id="dropdownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= userName %></a>
+                       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="./addresslist.jsp">Addresses</a>
+                        <a class="dropdown-item" href="#">MyProfile</a>
+                       </div>
+                       </div>
+                           
                         </li>
                          <li>
                             <a style="color:whitesmoke;text-decoration:none" class='mr-2' href="./logout">LogOut</a>
@@ -63,6 +72,8 @@ for(Cookie cookie : cookies){
 
 
             </nav>
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

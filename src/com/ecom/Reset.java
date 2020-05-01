@@ -85,6 +85,7 @@ public class Reset extends HttpServlet {
 			PrintWriter out = res.getWriter();
 			out.print("<div class='alert alert-danger'>User Doesn't Exist</div>");
 			rd.include(req, res);
+			
 		}
 	}
 		
