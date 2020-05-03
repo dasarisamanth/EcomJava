@@ -28,9 +28,9 @@
           </div>
         </div>
         
-      <button style='width:2rem' type="submit" class="btn btn-primary">Sign in</button>
+      <button style='width:8.5rem' type="submit" class="btn btn-primary text-center">Sign in</button>
       </form>
-        <a style='width:2rem'  class='btn btn-primary mt-2' href='./reset.html'>Reset Password</a>
+        <a style='width:8.5rem'  class='btn btn-primary mt-2 text-center' href='./reset.html'>Reset Password</a>
       </div>
 
 </body>

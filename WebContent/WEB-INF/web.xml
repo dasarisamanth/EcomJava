@@ -73,4 +73,32 @@
   <servlet-name>Delete Address</servlet-name>
   <url-pattern>/delete</url-pattern>
   </servlet-mapping>
+  <error-page>
+  <error-code>500</error-code>
+  <location>/error.html</location>
+  </error-page>
+   <servlet>
+  <servlet-name>Add To Cart</servlet-name>
+  <servlet-class>com.ecom.AddToCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Add To Cart</servlet-name>
+  <url-pattern>/addtocart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>Delete Cart</servlet-name>
+  <servlet-class>com.ecom.DeleteCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Delete Cart</servlet-name>
+  <url-pattern>/deletecart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>Update Details</servlet-name>
+  <servlet-class>com.ecom.UpdateDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Update Details</servlet-name>
+  <url-pattern>/updateDetails</url-pattern>
+  </servlet-mapping>
 </web-app>

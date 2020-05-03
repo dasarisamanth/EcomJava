@@ -8,13 +8,18 @@ import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class DeleteAddress extends HttpServlet{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -25,7 +30,7 @@ public class DeleteAddress extends HttpServlet{
 			String select[] = req.getParameterValues("names"); 
 			if (select != null && select.length != 0) {
 
-			for (int i = 0; i <=select.length-1; i++) {
+			for (int i = 0; i < select.length; i++) {
 			        value=select[i]; 
 			        System.out.println(value);
 			        PreparedStatement pst = con.prepareStatement("delete from users_ecom_address where nickname=?");

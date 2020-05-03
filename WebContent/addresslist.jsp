@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import='com.ecom.Addresses' %>
+
 <%@page import="java.util.*"%> 
 <%@page import ='com.ecom.Address' %>
 
@@ -32,7 +33,8 @@ for(Cookie cookie : cookies){
 <div class='container'>
 <form action='./delete' method='post'>
 <div class='row'>
-<% ArrayList<Address> adr = Addresses.getAddress(userName);
+<%
+ArrayList<Address> adr = Addresses.getAddress(userName);
 
 for(Address addr : adr) {
 	   String val=addr.getNickName();
@@ -58,10 +60,10 @@ for(Address addr : adr) {
 </div>
 
 <% if(adr.size()!=0){ %>
-<button type='submit' class='btn btn-primary'>Delete</button>
+<button style='width:5rem'type='submit' class='btn btn-primary text-center'>Delete</button>
 <%} %>
 </form>
-<button class='btn btn-primary mt-2' id='addButton' style='display:block' onClick=toggle()>Add</button>
+<button style='width:5rem' class='btn btn-primary mt-2 text-center' id='addButton' style='display:block' onClick=toggle()>Add</button>
  <div class='container'>
 
 <form  id='myform' style='display:none;margin-left:3rem;' action="./add" method="post">
